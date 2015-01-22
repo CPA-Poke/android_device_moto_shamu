@@ -30,6 +30,7 @@
 #include <stdbool.h>
 
 #define LOG_TAG "PowerHAL"
+#define LOG_NDEBUG 0
 #include <utils/Log.h>
 
 #include <hardware/hardware.h>
@@ -87,7 +88,7 @@ static void coresonline(int off)
     }
 
     if (rc < 0) {
-        ALOGE("%s: failed to send: %s", __func__, strerror(errno));
+        //ALOGE("%s: failed to send: %s", __func__, strerror(errno));
     }
 }
 
@@ -115,7 +116,7 @@ static void enc_boost(int off)
     }
 
     if (rc < 0) {
-        ALOGE("%s: failed to send: %s", __func__, strerror(errno));
+        //ALOGE("%s: failed to send: %s", __func__, strerror(errno));
     }
 }
 
@@ -164,13 +165,13 @@ static void low_power(int on)
         snprintf(data, MAX_LENGTH, "10:%d", client);
         rc = sendto(client_sockfd, data, strlen(data), 0, (const struct sockaddr *)&client_addr, sizeof(struct sockaddr_un));
         if (rc < 0) {
-            ALOGE("%s: failed to send: %s", __func__, strerror(errno));
+            //ALOGE("%s: failed to send: %s", __func__, strerror(errno));
         }
     } else {
         snprintf(data, MAX_LENGTH, "9:%d", client);
         rc = sendto(client_sockfd, data, strlen(data), 0, (const struct sockaddr *)&client_addr, sizeof(struct sockaddr_un));
         if (rc < 0) {
-            ALOGE("%s: failed to send: %s", __func__, strerror(errno));
+            //ALOGE("%s: failed to send: %s", __func__, strerror(errno));
         }
     }
 }
@@ -211,7 +212,7 @@ static void power_hint( __attribute__((unused)) struct power_module *module,
 {
     switch (hint) {
         case POWER_HINT_INTERACTION:
-            ALOGV("POWER_HINT_INTERACTION");
+            //ALOGV("POWER_HINT_INTERACTION");
             break;
 #if 0
         case POWER_HINT_VSYNC:
