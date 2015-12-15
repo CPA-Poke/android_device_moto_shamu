@@ -21,9 +21,9 @@
 
 # Kernel inline
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
-TARGET_KERNEL_CONFIG := shamu_defconfig
-TARGET_VARIANT_CONFIG := shamu_defconfig
-TARGET_SELINUX_CONFIG := shamu_defconfig
+TARGET_KERNEL_CONFIG := hells_defconfig
+TARGET_VARIANT_CONFIG := hells_defconfig
+TARGET_SELINUX_CONFIG := hells_defconfig
 
 PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \

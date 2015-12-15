@@ -1,6 +1,6 @@
 [
  {
-   "repository":  "DirtyUnicorns/android_kernel_moto_shamu",
+   "repository":  "CPA-Poke/hells-Core-N6",
    "target_path": "kernel/moto/shamu",
    "branch":      "m"
  }
