@@ -171,6 +171,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessingdescriptors
 
 PRODUCT_PACKAGES += \
+    Snap \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
