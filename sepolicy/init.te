@@ -2,3 +2,11 @@ allow init diag_device:chr_file unlink;
 allow init tmpfs:lnk_file create_file_perms;
 allow init userdata_block_device:blk_file rw_file_perms;
 allow init cache_block_device:blk_file rw_file_perms;
+
+# fix some selinux denials related to supersu
+allow init system_file:file execute_no_trans;
+allow zygote init:unix_stream_socket { read write };
+
+# allow supolicy to read and load sepolicy
+allow init kernel:security load_policy;
+allow init kernel:security read_policy;
